@@ -1,0 +1,18 @@
+// Example of closure. An inner function [of any given-function] that closes over [i.e has access to]
+// other variables declared inside the given-function is called a Closure. Every time we write inner
+// functions, we are creating closures.
+// Very useful in the concept of data-hiding and enforcing privacy constraints on properties/variables
+
+var counter = function() {
+	var count = 0; // private variable accessible only to code within the function
+	
+	return function() { // The inner function closes over the count variable - closures !
+	  return count++;
+	} 
+}(); // () operator executes the function and sets 'count' with the result of execution
+
+console.log(counter()); // prints 0
+console.log(counter()); // prints 1
+
+// The count variable is only visible within the function where it is declared and is visible to the inner
+// functions even after the function/method in which it is declared completes executing
