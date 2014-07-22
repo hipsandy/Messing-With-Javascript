@@ -23,7 +23,7 @@ Cat.prototype.talk = function(){
 };
 
 
-// newCat is a factory method for creating new cats.
+// newCat is a factory function for creating new cats.
 function newCat(name) {
   console.log(this); // this refers to the global-object i.e. Window
   return {
@@ -36,7 +36,6 @@ function newCat(name) {
 }
 
 // Instantiate objects using the above two approaches:
-
 var c1 = new Cat("tiger");
 c1.talk();
 
